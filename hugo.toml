@@ -1,0 +1,6 @@
+baseURL = 'https://example.com/'
+locale = 'zh-cn'
+title = 'Mark 的个人博客'
+
+[params]
+  description = '用 Typora 写作，用 Hugo 和 GitHub Pages 发布。'
