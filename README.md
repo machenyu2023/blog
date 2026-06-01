@@ -4,6 +4,14 @@
 
 ## 本地预览
 
+先进入博客目录：
+
+```powershell
+cd D:\blog
+```
+
+然后启动预览：
+
 ```powershell
 D:\Program\Hugo\bin\hugo.exe server -D
 ```
@@ -15,6 +23,8 @@ http://localhost:1313/
 ```
 
 ## 新建文章
+
+在 `D:\blog` 目录里运行：
 
 ```powershell
 D:\Program\Hugo\bin\hugo.exe new content content/posts/my-new-post/index.md
