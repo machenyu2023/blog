@@ -3,7 +3,9 @@
   <p class="eyebrow">Personal Blog</p>
   <h1>你好，这是 Mark 的个人博客。</h1>
   <p class="lede">这是一个 Hugo 测试页面。以后你可以用 Typora 写 Markdown，提交到 GitHub 后自动发布到 GitHub Pages。</p>
-  <a class="button" href="{{ "/posts/" | relURL }}">查看测试文章</a>
+  {{ with site.GetPage "section" "posts" }}
+    <a class="button" href="{{ .RelPermalink }}">查看测试文章</a>
+  {{ end }}
 </section>
 
 <section class="section">
