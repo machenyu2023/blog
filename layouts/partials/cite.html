@@ -1,0 +1,20 @@
+{{- $author := site.Params.author -}}
+{{- $year := .Date.Format "2006" -}}
+{{- $pub := .Date.Format "2006-01-02" -}}
+{{- $access := now.Format "2006-01-02" -}}
+{{- $key := printf "%s%s%s" (lower $author) $year .File.ContentBaseName -}}
+<section class="post-cite" aria-label="如何引用本文">
+  <h2 class="post-cite-title">如何引用本文 / How to cite</h2>
+  <p class="post-cite-desc">若本文对你有帮助，欢迎按以下任一标准格式引用并保留原文链接。</p>
+  <p class="post-cite-label">GB/T 7714-2015</p>
+  <pre class="cite-block"><code>{{ $author }}. {{ .Title }}[EB/OL]. ({{ $pub }})[{{ $access }}]. {{ .Permalink }}.</code></pre>
+  <p class="post-cite-label">BibTeX</p>
+  <pre class="cite-block"><code>@misc{{"{"}}{{ $key }},
+  author       = {{"{"}}{{ $author }}{{"}"}},
+  title        = {{"{"}}{{"{"}}{{ .Title }}{{"}"}}{{"}"}},
+  howpublished = {{"{"}}{{ site.Title }}{{"}"}},
+  year         = {{"{"}}{{ $year }}{{"}"}},
+  url          = {{"{"}}{{ .Permalink }}{{"}"}},
+  note         = {{"{"}}访问日期：{{ $access }}{{"}"}}
+{{"}"}}</code></pre>
+</section>
