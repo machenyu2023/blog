@@ -29,7 +29,7 @@ D:\Program\Hugo\bin\hugo.exe new posts/my-new-post/index.md
 title = '文章标题'
 date = 2026-06-17T20:00:00+08:00
 draft = false
-categories = ['优化与算法']
+categories = ['optimization-algorithms']
 summary = '一句话摘要，显示在列表页。'
 +++
 ```

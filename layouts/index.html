@@ -15,7 +15,7 @@
   <div class="category-grid">
     {{ range site.Params.categories }}
       {{ $slug := .slug }}
-      {{ $url := printf "/categories/%s/" $slug }}
+      {{ $url := printf "categories/%s/" $slug }}
       {{ $pages := where (where site.RegularPages "Section" "posts") ".Params.categories" "intersect" (slice $slug) }}
       <article class="category-card">
         <h3><a href="{{ $url | relURL }}">{{ .name }}</a></h3>
@@ -34,7 +34,7 @@
     <section class="section category-section">
       <div class="section-heading">
         <h2>{{ .name }}</h2>
-        <a class="text-link" href="{{ printf "/categories/%s/" $slug | relURL }}">查看全部</a>
+        <a class="text-link" href="{{ printf "categories/%s/" $slug | relURL }}">查看全部</a>
       </div>
       <div class="post-list">
         {{ range first 4 ($pages.ByDate.Reverse) }}

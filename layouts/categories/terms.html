@@ -9,7 +9,7 @@
   <div class="category-grid">
     {{ range site.Params.categories }}
       {{ $slug := .slug }}
-      {{ $url := printf "/categories/%s/" $slug }}
+      {{ $url := printf "categories/%s/" $slug }}
       {{ $pages := where (where site.RegularPages "Section" "posts") ".Params.categories" "intersect" (slice $slug) }}
       <article class="category-card">
         <h2><a href="{{ $url | relURL }}">{{ .name }}</a></h2>
