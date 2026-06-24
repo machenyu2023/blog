@@ -1,4 +1,9 @@
-{{ $slug := . }}
+{{- $input := printf "%s" . -}}
+{{- $slug := $input | lower -}}
+{{- $label := $input -}}
 {{- range site.Params.categories -}}
-  {{- if eq .slug $slug -}}{{ .name }}{{- end -}}
+  {{- if or (eq .slug $slug) (eq .name $input) -}}
+    {{- $label = .name -}}
+  {{- end -}}
 {{- end -}}
+{{- $label -}}

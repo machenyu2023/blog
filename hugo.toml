@@ -7,6 +7,7 @@ title = 'Mark 的个人博客'
   author = 'Mark'
   subtitle = '学术笔记与阅读札记'
   description = '记录逻辑与写作、地理与遥感、优化与算法相关的阅读笔记、方法总结与研究思考。'
+  math = true
 
   [params.license]
     name = '署名-非商业性使用-禁止演绎 4.0 国际'
@@ -29,5 +30,12 @@ title = 'Mark 的个人博客'
     description = '最优化方法、机器学习算法与数值实现笔记。'
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$'], ['%$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
   [markup.highlight]
     noClasses = false

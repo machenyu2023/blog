@@ -411,6 +411,12 @@ h3 {
   color: inherit;
 }
 
+.content mjx-container[jax="CHTML"][display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.35em 0;
+}
+
 .post-license {
   max-width: 760px;
   margin-top: 40px;
