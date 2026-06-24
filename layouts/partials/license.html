@@ -1,0 +1,23 @@
+{{ $author := site.Params.author }}
+{{ $license := site.Params.license }}
+<aside class="post-license" aria-label="版权声明">
+  <p class="post-license-row">
+    <span class="post-license-key">作者</span>
+    <span>{{ $author }}</span>
+  </p>
+  <p class="post-license-row">
+    <span class="post-license-key">发布</span>
+    <span>{{ .Date.Format "2006年01月02日" }}{{ if and (not .Lastmod.IsZero) (ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02")) }}（更新于 {{ .Lastmod.Format "2006年01月02日" }}）{{ end }}</span>
+  </p>
+  <p class="post-license-row">
+    <span class="post-license-key">链接</span>
+    <a href="{{ .Permalink }}">{{ .Permalink }}</a>
+  </p>
+  {{ with $license }}
+  <p class="post-license-row">
+    <span class="post-license-key">许可</span>
+    <span>本文采用 <a href="{{ .url }}" rel="license" target="_blank">{{ .name }}（{{ .abbr }}）</a> 协议授权。</span>
+  </p>
+  {{ end }}
+  <p class="post-license-note">转载请保留作者署名与原文链接，非商业用途；如需商业使用或改编，请先取得作者授权。</p>
+</aside>

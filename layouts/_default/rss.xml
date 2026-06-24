@@ -1,0 +1,34 @@
+{{- $pctx := . -}}
+{{- if .IsHome -}}{{ $pctx = site }}{{- end -}}
+{{- $pages := slice -}}
+{{- if or $.IsHome $.IsSection -}}
+{{- $pages = $pctx.RegularPages -}}
+{{- else -}}
+{{- $pages = $pctx.Pages -}}
+{{- end -}}
+{{- $limit := site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+{{- $pages = $pages | first $limit -}}
+{{- end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ if eq  .Title  site.Title }}{{ site.Title }}{{ else }}{{ with .Title }}{{ . }} on {{ end }}{{ site.Title }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>Recent content {{ if ne  .Title  site.Title }}{{ with .Title }}in {{ . }} {{ end }}{{ end }}on {{ site.Title }}</description>
+    <generator>Hugo</generator>{{ with site.Language.LanguageCode }}
+    <language>{{ . }}</language>{{ end }}
+    <copyright>© {{ now.Format "2006" }} {{ site.Params.author }}{{ with site.Params.license }} · 本站原创内容采用 {{ .abbr }} 协议授权，转载请注明出处并保留原文链接{{ end }}</copyright>{{ with .OutputFormats.Get "rss" }}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}{{ end }}
+    {{- range $pages }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      <author>{{ with .Params.author }}{{ . }}{{ else }}{{ site.Params.author }}{{ end }}</author>
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }} {{ printf "（全文请访问原文：%s）" .Permalink }}</description>
+    </item>
+    {{- end }}
+  </channel>
+</rss>
