@@ -1,6 +1,25 @@
 baseURL = 'https://example.com/'
-locale = 'zh-cn'
+languageCode = 'zh-cn'
+defaultContentLanguage = 'zh-cn'
 title = 'Mark 的个人博客'
 
 [params]
-  description = '用 Typora 写作，用 Hugo 和 GitHub Pages 发布。'
+  author = 'Mark'
+  subtitle = '学术笔记与阅读札记'
+  description = '记录逻辑与写作、地理与遥感、优化与算法相关的阅读笔记、方法总结与研究思考。'
+
+  [[params.categories]]
+    name = '逻辑与写作'
+    description = '论证结构、学术写作、阅读方法与表达训练。'
+
+  [[params.categories]]
+    name = '地理与遥感'
+    description = '遥感原理、空间分析、地理数据与地学应用实践。'
+
+  [[params.categories]]
+    name = '优化与算法'
+    description = '最优化方法、机器学习算法与数值实现笔记。'
+
+[markup]
+  [markup.highlight]
+    noClasses = false

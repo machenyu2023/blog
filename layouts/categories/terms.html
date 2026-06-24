@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="page-header">
+  <p class="eyebrow">Taxonomy</p>
+  <h1>文章分类</h1>
+  <p class="page-intro">笔记按三个主题归档，便于按研究方向与方法体系检索。</p>
+</section>
+
+<section class="section">
+  <div class="category-grid">
+    {{ range site.Params.categories }}
+      {{ $name := .name }}
+      {{ $url := printf "/categories/%s" ($name | urlize) }}
+      {{ $pages := where (where site.RegularPages "Section" "posts") ".Params.categories" "intersect" (slice $name) }}
+      <article class="category-card">
+        <h2><a href="{{ $url | relURL }}">{{ $name }}</a></h2>
+        <p>{{ .description }}</p>
+        <p class="category-count">{{ len $pages }} 篇文章</p>
+        <a class="text-link" href="{{ $url | relURL }}">浏览文章 →</a>
+      </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

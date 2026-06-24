@@ -1,0 +1,14 @@
+{{ $page := .Page }}
+{{ $level := .level | default 3 }}
+<article class="post-entry">
+  <div class="post-entry-meta">
+    <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "2006.01.02" }}</time>
+    {{ partial "category-badge.html" $page }}
+  </div>
+  <h{{ $level }} class="post-entry-title">
+    <a href="{{ $page.RelPermalink }}">{{ $page.LinkTitle }}</a>
+  </h{{ $level }}>
+  {{ with $page.Summary }}
+    <p class="post-entry-summary">{{ . }}</p>
+  {{ end }}
+</article>

@@ -1,9 +1,11 @@
 {{ define "main" }}
 <section class="page-header">
-  <p class="eyebrow">Archive</p>
+  <p class="eyebrow">Category</p>
   <h1>{{ .Title }}</h1>
-  {{ with .Content }}
-    <div class="page-intro">{{ . }}</div>
+  {{ range site.Params.categories }}
+    {{ if eq .name $.Title }}
+      <p class="page-intro">{{ .description }}</p>
+    {{ end }}
   {{ end }}
 </section>
 
@@ -12,7 +14,7 @@
     {{ range .Pages.ByDate.Reverse }}
       {{ partial "post-entry.html" (dict "Page" . "level" 2) }}
     {{ else }}
-      <p class="empty-note">这里还没有内容。</p>
+      <p class="empty-note">该分类下暂无文章。</p>
     {{ end }}
   </div>
 </section>

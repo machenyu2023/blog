@@ -1,0 +1,3 @@
+{{ range .GetTerms "categories" }}
+  <a class="category-badge" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+{{ end }}
