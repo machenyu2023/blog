@@ -11,27 +11,23 @@
   <header class="site-header">
     <div class="header-inner">
       <div class="brand-block">
-        <a class="brand" href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
+        <a class="brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
         {{ with site.Params.subtitle }}
           <p class="brand-subtitle">{{ . }}</p>
         {{ end }}
       </div>
       <nav class="top-nav" aria-label="主导航">
-        <a href="{{ site.Home.RelPermalink }}">首页</a>
+        <a href="{{ "/" | relURL }}">首页</a>
         {{ with site.GetPage "section" "posts" }}
           <a href="{{ .RelPermalink }}">全部文章</a>
         {{ end }}
-        {{ with site.GetPage "/categories" }}
-          <a href="{{ .RelPermalink }}">分类</a>
-        {{ end }}
+        <a href="{{ "/categories/" | relURL }}">分类</a>
         <a href="https://machenyu2023.github.io/">主页</a>
       </nav>
     </div>
     <nav class="category-nav" aria-label="文章分类">
       {{ range site.Params.categories }}
-        {{ $name := .name }}
-        {{ $url := printf "/categories/%s" ($name | urlize) }}
-        <a href="{{ $url | relURL }}">{{ $name }}</a>
+        {{ partial "category-nav-link.html" . }}
       {{ end }}
     </nav>
   </header>

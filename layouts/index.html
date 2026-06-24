@@ -14,11 +14,11 @@
   </div>
   <div class="category-grid">
     {{ range site.Params.categories }}
-      {{ $name := .name }}
-      {{ $url := printf "/categories/%s" ($name | urlize) }}
-      {{ $pages := where (where site.RegularPages "Section" "posts") ".Params.categories" "intersect" (slice $name) }}
+      {{ $slug := .slug }}
+      {{ $url := printf "/categories/%s/" $slug }}
+      {{ $pages := where (where site.RegularPages "Section" "posts") ".Params.categories" "intersect" (slice $slug) }}
       <article class="category-card">
-        <h3><a href="{{ $url | relURL }}">{{ $name }}</a></h3>
+        <h3><a href="{{ $url | relURL }}">{{ .name }}</a></h3>
         <p>{{ .description }}</p>
         <p class="category-count">{{ len $pages }} 篇文章</p>
         <a class="text-link" href="{{ $url | relURL }}">进入分类 →</a>
@@ -28,13 +28,13 @@
 </section>
 
 {{ range site.Params.categories }}
-  {{ $name := .name }}
-  {{ $pages := where (where site.RegularPages "Section" "posts") ".Params.categories" "intersect" (slice $name) }}
+  {{ $slug := .slug }}
+  {{ $pages := where (where site.RegularPages "Section" "posts") ".Params.categories" "intersect" (slice $slug) }}
   {{ if $pages }}
     <section class="section category-section">
       <div class="section-heading">
-        <h2>{{ $name }}</h2>
-        <a class="text-link" href="{{ printf "/categories/%s" ($name | urlize) | relURL }}">查看全部</a>
+        <h2>{{ .name }}</h2>
+        <a class="text-link" href="{{ printf "/categories/%s/" $slug | relURL }}">查看全部</a>
       </div>
       <div class="post-list">
         {{ range first 4 ($pages.ByDate.Reverse) }}

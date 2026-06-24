@@ -1,0 +1,4 @@
+{{ $slug := . }}
+{{- range site.Params.categories -}}
+  {{- if eq .slug $slug -}}{{ .name }}{{- end -}}
+{{- end -}}

@@ -1,4 +1,4 @@
-baseURL = 'https://example.com/'
+baseURL = 'https://machenyu2023.github.io/blog/'
 languageCode = 'zh-cn'
 defaultContentLanguage = 'zh-cn'
 title = 'Mark 的个人博客'
@@ -10,14 +10,17 @@ title = 'Mark 的个人博客'
 
   [[params.categories]]
     name = '逻辑与写作'
+    slug = 'logic-writing'
     description = '论证结构、学术写作、阅读方法与表达训练。'
 
   [[params.categories]]
     name = '地理与遥感'
+    slug = 'geo-remote-sensing'
     description = '遥感原理、空间分析、地理数据与地学应用实践。'
 
   [[params.categories]]
     name = '优化与算法'
+    slug = 'optimization-algorithms'
     description = '最优化方法、机器学习算法与数值实现笔记。'
 
 [markup]

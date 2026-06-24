@@ -2,7 +2,7 @@
 title = '梯度下降法：直觉、更新公式与收敛注意点'
 date = 2026-06-15T09:00:00+08:00
 draft = false
-categories = ['优化与算法']
+categories = ['optimization-algorithms']
 summary = '从几何直觉出发理解梯度下降，并总结学习率选择、批量策略与局部最优等常见问题。'
 +++
 

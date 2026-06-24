@@ -2,7 +2,7 @@
 title = '热红外遥感基础：从辐射传输到地表温度反演'
 date = 2026-06-10T10:00:00+08:00
 draft = false
-categories = ['地理与遥感']
+categories = ['geo-remote-sensing']
 summary = '梳理热红外遥感的基本物理过程、常见数据源，以及地表温度反演中需要关注的关键误差来源。'
 +++
 

@@ -2,7 +2,7 @@
 title = '如何写清楚一个论证段落'
 date = 2026-06-12T15:30:00+08:00
 draft = false
-categories = ['逻辑与写作']
+categories = ['logic-writing']
 summary = '用 Claim–Evidence–Reasoning 结构组织段落，让学术写作中的观点、证据与解释彼此衔接。'
 +++
 

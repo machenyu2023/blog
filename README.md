@@ -34,13 +34,19 @@ summary = '一句话摘要，显示在列表页。'
 +++
 ```
 
-`categories` 请从以下三项中选择一项：
+`categories` 请从以下 slug 中选择一项（括号内为页面显示名称）：
 
-| 分类 | 适用内容 |
+| slug | 显示名称 |
 |------|----------|
-| `逻辑与写作` | 论证、写作、阅读方法 |
-| `地理与遥感` | 遥感、地理分析、空间数据 |
-| `优化与算法` | 优化、机器学习、算法实现 |
+| `logic-writing` | 逻辑与写作 |
+| `geo-remote-sensing` | 地理与遥感 |
+| `optimization-algorithms` | 优化与算法 |
+
+示例：
+
+```toml
+categories = ['geo-remote-sensing']
+```
 
 ## 发布
 

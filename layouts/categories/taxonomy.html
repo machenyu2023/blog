@@ -1,9 +1,9 @@
 {{ define "main" }}
 <section class="page-header">
   <p class="eyebrow">Category</p>
-  <h1>{{ .Title }}</h1>
+  <h1>{{ partial "category-label.html" .Title }}</h1>
   {{ range site.Params.categories }}
-    {{ if eq .name $.Title }}
+    {{ if eq .slug $.Title }}
       <p class="page-intro">{{ .description }}</p>
     {{ end }}
   {{ end }}

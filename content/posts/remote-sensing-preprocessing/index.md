@@ -2,7 +2,7 @@
 title = '遥感影像预处理流程：从辐射校正到几何配准'
 date = 2026-06-18T14:00:00+08:00
 draft = false
-categories = ['地理与遥感']
+categories = ['geo-remote-sensing']
 summary = '概述遥感影像预处理的主要环节，说明辐射校正、大气校正与几何校正各自解决什么问题。'
 +++
 
