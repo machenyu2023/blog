@@ -1,0 +1,42 @@
+[zhangPrefaceAdvancingDeep2025]
+authors = "Zhang H. K., Camps-Valls G., Liang S., Tuia D., Pelletier C., and Zhu Z."
+year = "2025"
+title = "Preface: advancing deep learning for remote sensing time series data analysis"
+container = "Remote Sensing of Environment"
+volume = "322"
+pages = "114711"
+doi = "10.1016/j.rse.2025.114711"
+
+[hoxhaSelfSupervisedCrossModalTextImage2025]
+authors = "Hoxha G., Angyal O., and Demir B."
+year = "2025"
+title = "Self-supervised cross-modal text-image time series retrieval in remote sensing"
+container = "IEEE Transactions on Geoscience and Remote Sensing"
+volume = "63"
+pages = "1-15"
+doi = "10.1109/TGRS.2025.3601393"
+
+[HighQualitySmallFire]
+authors = "Lv P., Sun L., and Liu X."
+year = "2026"
+title = "High-Quality Small Fire Samples Generation and Application in Deep Learning-Based Forest Fire Monitoring"
+container = "IEEE Transactions on Geoscience and Remote Sensing"
+volume = "64"
+pages = "1-16"
+doi = "10.1109/TGRS.2026.3681799"
+
+[yaoTransformingGlobalWater2026]
+authors = "Yao Z., Cui Y., Jin Z., Wu S., Guo Q., Xu Y., Guo Z., Jiang C., Qu Y., Zhai D., and Fan W."
+year = "2026"
+title = "Transforming global water cycle observations via synergistic AI and remote sensing"
+container = "Science Advances"
+volume = "12"
+pages = "eaef3610"
+doi = "10.1126/sciadv.aef3610"
+
+[guiAdvancingOperationalGlobal2026]
+authors = "Gui K., Zhang X., Che H., Li L., Zheng Y., An L., Miao Y., Zhao H., Dubovik O., Holben B., Wang J., Gupta P., Lind E. S., Toledano C., Wang H., Wang Z., Wang Y., Huang X., Dai K., Xia X., Xu X., and Zhang X."
+year = "2026"
+title = "Advancing operational global aerosol forecasting with machine learning"
+container = "Nature"
+doi = "10.1038/s41586-026-10234-y"

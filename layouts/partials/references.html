@@ -1,0 +1,24 @@
+{{- with .Params.references -}}
+<section class="post-references" id="references" aria-label="参考文献">
+  <h2 class="post-references-title">参考文献</h2>
+  <ol class="reference-list">
+    {{- range . }}
+      {{- $key := . -}}
+      {{- $ref := index hugo.Data.references $key -}}
+      <li id="ref-{{ anchorize $key }}">
+        {{- if $ref -}}
+          <span class="reference-authors">{{ $ref.authors }}</span>
+          {{- with $ref.year }} <span class="reference-year">({{ . }}).</span>{{ end }}
+          {{- with $ref.title }} <span class="reference-title">{{ . }}</span>.{{ end }}
+          {{- with $ref.container }} <span class="reference-container">{{ . }}</span>{{ end -}}
+          {{- with $ref.volume }}, <span class="reference-volume">{{ . }}</span>{{ end -}}
+          {{- with $ref.pages }}, <span class="reference-pages">{{ . }}</span>{{ end -}}
+          {{- with $ref.doi }}. <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">https://doi.org/{{ . }}</a>{{ end -}}
+        {{- else -}}
+          <code>{{ $key }}</code> 的参考文献信息尚未加入 <code>data/references.toml</code>。
+        {{- end -}}
+      </li>
+    {{- end }}
+  </ol>
+</section>
+{{- end -}}

@@ -1,0 +1,12 @@
+{{- $key := .Get 0 -}}
+{{- $number := 0 -}}
+{{- range $index, $refKey := (.Page.Params.references | default (slice)) -}}
+  {{- if eq $refKey $key -}}
+    {{- $number = add $index 1 -}}
+  {{- end -}}
+{{- end -}}
+{{- if gt $number 0 -}}
+<sup class="citation"><a href="#ref-{{ anchorize $key }}">[{{ $number }}]</a></sup>
+{{- else -}}
+<sup class="citation citation-missing">[?]</sup>
+{{- end -}}

@@ -417,6 +417,60 @@ h3 {
   padding: 0.35em 0;
 }
 
+.citation {
+  margin-left: 2px;
+  font-size: 0.72em;
+  line-height: 0;
+  vertical-align: super;
+}
+
+.citation a {
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.citation a:hover {
+  color: var(--mark);
+  text-decoration: underline;
+}
+
+.citation-missing {
+  color: var(--mark);
+}
+
+.post-references {
+  max-width: 760px;
+  margin-top: 36px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.post-references-title {
+  margin-bottom: 12px;
+  color: var(--accent-strong);
+  font-size: 22px;
+}
+
+.reference-list {
+  margin: 0;
+  padding-left: 1.5em;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.reference-list li {
+  margin-bottom: 0.85em;
+  padding-left: 0.2em;
+}
+
+.reference-title {
+  color: var(--ink);
+}
+
+.reference-container {
+  font-style: italic;
+}
+
 .post-license {
   max-width: 760px;
   margin-top: 40px;
