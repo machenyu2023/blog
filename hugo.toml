@@ -1,5 +1,5 @@
 baseURL = 'https://machenyu2023.github.io/blog/'
-languageCode = 'zh-cn'
+locale = 'zh-cn'
 defaultContentLanguage = 'zh-cn'
 title = 'Mark 的个人博客'
 
